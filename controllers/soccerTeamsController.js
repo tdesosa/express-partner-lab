@@ -17,4 +17,14 @@ router.delete('/:id', (req, res) => {
     res.redirect('/soccerTeams');
 });
 
+// Edit Route
+
+router.get('/:id/edit', (req, res) => {
+    res.render('edit.ejs', {
+      soccerTeams: SoccerTeams[req.params.id],
+      //id: req.params.id
+    });
+  });
+
+
 module.exports = router;
