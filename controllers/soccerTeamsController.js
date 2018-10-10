@@ -22,9 +22,16 @@ router.delete('/:id', (req, res) => {
 router.get('/:id/edit', (req, res) => {
     res.render('edit.ejs', {
       soccerTeams: SoccerTeams[req.params.id],
-      //id: req.params.id
+      id: req.params.id,
     });
   });
+
+// Put Route
+
+router.put('/:id', (req, res) => {
+    SoccerTeams[req.params.id] = req.body;
+    res.redirect('/soccerTeams');
+});
 
 
 module.exports = router;
