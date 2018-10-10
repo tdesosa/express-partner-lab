@@ -22,7 +22,7 @@ router.delete('/:id', (req, res) => {
 router.get('/:id/edit', (req, res) => {
     res.render('edit.ejs', {
       soccerTeams: SoccerTeams[req.params.id],
-      id: req.params.id,
+      id: req.params.id
     });
   });
 
@@ -37,7 +37,8 @@ router.put('/:id', (req, res) => {
 
 router.get('/:id', (req, res) => {
     res.render('show.ejs', {
-        soccerTeams: SoccerTeams[req.params.id]
+        soccerTeams: SoccerTeams[req.params.id],
+        id: req.params.id
     });
 });
 
