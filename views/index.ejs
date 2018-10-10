@@ -10,9 +10,19 @@
 
     <h1>The World's Best Soccer Teams:</h1>
 
+    <!-- Display Names From soccerTeams Array In List Formatt -->
+
     <ul class="clubs">
         <% for(let i = 0; i < soccerTeams.length; i ++) { %>
-            <li> <a href="/soccerTeams/<%= i %>"> <%= soccerTeams[i].name %></li>
+            <li> <a href="/soccerTeams/<%= i %>"> <%= soccerTeams[i].name %>
+
+                <!-- Create A Form Which Will Make A DELETE Request To The Server -->
+
+                <form action="/soccerTeams/<%= i %>?_method=DELETE" method="POST">
+                <input type="submit" value="Delete">
+                </form>
+
+            </li>
         <% } %>
     </ul>
 
