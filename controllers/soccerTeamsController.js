@@ -8,13 +8,13 @@ const SoccerTeams = require('../models/soccerTeams');
 // Index Route
 router.get("/", (req, res) => {
     res.render("index.ejs", {soccerTeams: SoccerTeams});
-  });
+});
 
+// Delete Route
 
-// Index route
-// Shows all the fruits
-// router.get('/', (req, res) => {
-//     res.render('index.ejs', {fruits: Fruits});
-//   });
+router.delete('/:id', (req, res) => {
+    SoccerTeams.splice(req.params.id, 1);
+    res.redirect('/soccerTeams');
+});
 
 module.exports = router;
